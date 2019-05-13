@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect("mongodb://localhost:27017/conjecture", {
+mongoose.connect(process.env._HOST + process.env._DBNAME, {
   useNewUrlParser: true
 });
 
@@ -14,5 +14,5 @@ db.on(
   console.error.bind(console, colors.error("--- Connection error"))
 );
 db.once("open", callback =>
-  console.log(colors.success("+++ Success[conjecture]"))
+  console.log(colors.success(`+++ Connected to the Database[${process.env._DBNAME}]`))
 );

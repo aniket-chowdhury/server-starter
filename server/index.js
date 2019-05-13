@@ -20,10 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // CRUD Routes
-app.use("/add", require(routesDir + "addItem"));
-app.use("/list", require(routesDir + "listItems"));
-app.use("/update", require(routesDir + "updateItem"));
-app.use('/delete',require(routesDir + 'deleteItem'))
+app.use('/api',require(routesDir + 'api'))
 
 // Login Routes
 app.use('/login',require(routesDir + "loginRoutes"))

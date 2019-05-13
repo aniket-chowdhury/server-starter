@@ -12,6 +12,7 @@ const server = require('./server')
 const port = process.env.PORT;
 const staticDir = __dirname + "/./static/";
 const routesDir = __dirname + "/./routes/";
+const middlewaresDir = __dirname + "/./middlewares/";
 
 // Express Initialization
 const app = express();
@@ -20,6 +21,11 @@ app.use(express.json());
 
 // Login Routes
 app.use('/login',require(routesDir + "loginRoutes"))
+
+//  Testing routes -> to be remove in Production
+app.use('/tests',express.static('tests'))
+app.use('/',require(middlewaresDir+'auth'))
+app.get('/',(req,res)=>{res.status(200).send('okay')})
 
 console.log("\n\b");
 

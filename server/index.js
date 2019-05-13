@@ -1,12 +1,12 @@
 // Setup Initialization
-const colors = require('./colors')
+const colors = require("./colors");
 require("dotenv").config({
   path: __dirname + `/../${process.env.NODE_ENV}.env`
 });
 
 // Required Modules
-const express = require('express')
-const server = require('./server')
+const express = require("express");
+const server = require("./server");
 
 // Variables
 const port = process.env.PORT;
@@ -20,15 +20,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // CRUD Routes
-app.use('/api',require(routesDir + 'api'))
+app.use("/api", require(middlewaresDir + "auth"));
+app.use("/api", require(routesDir + "api"));
 
 // Login Routes
-app.use('/login',require(routesDir + "loginRoutes"))
+app.use("/login", require(routesDir + "loginRoutes"));
 
 //  Testing routes -> to be remove in Production
-app.use('/tests',express.static('tests'))
-app.use('/',require(middlewaresDir+'auth'))
-app.get('/',(req,res)=>{res.status(200).send('okay')})
+app.use("/tests", express.static("tests"));
+app.use("/", require(middlewaresDir + "auth"));
+app.get("/", (req, res) => {
+  res.status(200).send("okay");
+});
 
 console.log("\n\b");
 

@@ -11,7 +11,6 @@ const auth = (req,res,next)=>{
         if(err){
             return res.status(403).send('Failed to verify');
         }
-        console.log(decoded)
         return next();
     })
 }

@@ -19,6 +19,9 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// CRUD Routes
+app.use('/add',require(routesDir + 'addItem'))
+
 // Login Routes
 app.use('/login',require(routesDir + "loginRoutes"))
 

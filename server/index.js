@@ -18,6 +18,9 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+// Login Routes
+app.use('/login',require(routesDir + "loginRoutes"))
+
 console.log("\n\b");
 
 app.listen(port, () =>

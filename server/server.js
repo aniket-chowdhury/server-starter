@@ -1,6 +1,9 @@
 const colors = require("./colors");
 const mongoose = require("mongoose");
 
+
+mongoose.set("useFindAndModify", false);
+
 mongoose.Promise = global.Promise;
 
 mongoose.connect(process.env._HOST + process.env._DBNAME, {

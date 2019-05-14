@@ -1,8 +1,21 @@
 // Setup Initialization
 const colors = require("./colors");
+
+// ENVIRONMENT VARIABLE INITIALIZATION
+try{
+  if(!process.env.NODE_ENV){
+    throw('No environment specified.')
+  }
 require("dotenv").config({
   path: __dirname + `/../${process.env.NODE_ENV}.env`
 });
+}
+catch(err){
+  console.log(colors.error('Environment Variable missing. Specify env variable.\n'),
+  colors.success('\bUse npm run start-dev for development server.'));
+  process.exit(500)
+
+}
 
 // Required Modules
 const express = require("express");

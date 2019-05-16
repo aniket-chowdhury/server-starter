@@ -20,6 +20,7 @@ try {
 // Required Modules
 const express = require('express');
 const server = require('./server');
+const cors = require('cors')
 
 // Variables
 const port = process.env.PORT;
@@ -35,6 +36,8 @@ app.use(
 	})
 );
 app.use(express.json());
+app.use(cors())
+app.use(require(middlewaresDir+'allowedOrigins'))
 
 // CRUD Routes
 app.use('/api', require(middlewaresDir + 'auth'));

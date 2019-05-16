@@ -17,5 +17,5 @@ db.on(
   console.error.bind(console, colors.error("--- Connection error"))
 );
 db.once("open", callback =>
-  console.log(colors.success(`+++ Connected to the Database[${process.env._DBNAME}]`))
+  console.log(colors.success(`+++ Connected to the database[${process.env._DBNAME}]`))
 );

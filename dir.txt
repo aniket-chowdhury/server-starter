@@ -23,15 +23,16 @@
 │   │   ├── favicon.ico
 │   │   ├── index.html
 │   │   └── manifest.json
-│   └── src
-│       ├── index.js
-│       ├── scripts
-│       │   └── App.jsx
-│       └── styles
-│           ├── App.scss
-│           ├── colors.scss
-│           ├── fonts.scss
-│           └── index.scss
+│   ├── src
+│   │   ├── index.js
+│   │   ├── scripts
+│   │   │   └── App.jsx
+│   │   └── styles
+│   │       ├── App.scss
+│   │       ├── colors.scss
+│   │       ├── fonts.scss
+│   │       └── index.scss
+│   └── yarn.lock
 ├── dir.txt
 ├── production.env
 ├── server
@@ -59,4 +60,4 @@
 │       └── list.html
 └── testing.env
 
-17 directories, 42 files
+17 directories, 43 files

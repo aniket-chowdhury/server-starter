@@ -32,4 +32,5 @@ const allowedOrigins = (req, res, next) => {
 	});
 };
 
+
 module.exports = allowedOrigins;

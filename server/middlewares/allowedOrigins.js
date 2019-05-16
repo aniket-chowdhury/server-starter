@@ -7,7 +7,7 @@ const allowedOrigins = (req, res, next) => {
 		if (err) {
 			console.log(
 				colors.error(
-					`Failed to read file. Create ../allowedOrigins.json \n${err}`
+					`!!! Failed to read file. Create ../allowedOrigins.json \n${err}`
 				)
 			);
 			process.exit();

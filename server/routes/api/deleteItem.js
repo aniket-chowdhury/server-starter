@@ -10,7 +10,7 @@ app.post('/', (req, res, next) => {
 	if (id) {
 		Item.findByIdAndDelete(id, req.body, err => {
 			if (err) {
-				console.log(colors.error(err));
+				console.log(colors.error(`--- ${err}`));
 				res.status(502).send('Bad Gateway. Data Response Failure.');
 			} else {
 				res.status(200).json({

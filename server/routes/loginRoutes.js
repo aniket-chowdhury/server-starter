@@ -15,7 +15,7 @@ app.post('/', (req, res, next) => {
 				{ expiresIn: 60 * 60 * 24 },
 				(err, token) => {
 					if (err) {
-						console.log(colors.error(err));
+						console.log(colors.error(`--- ${err}`));
 						res.status(500).send('Error generating token');
 					} else {
 						res.status(200).json({ token: token });

@@ -11,8 +11,8 @@ try {
 	});
 } catch (err) {
 	console.log(
-		colors.error('Environment Variable missing. Specify env variable.\n'),
-		colors.success('\bUse npm run start-dev for development server.')
+		colors.error('--- Environment Variable missing. Specify env variable.\n'),
+		colors.warning('\b+++ Use npm run start-dev for development server.')
 	);
 	process.exit(500);
 }

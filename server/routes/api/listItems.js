@@ -10,7 +10,7 @@ app.post('/', (req, res, next) => {
 	if (id) {
 		Item.findById(id, (err, elem) => {
 			if (err) {
-				console.log(colors.error(err));
+				console.log(colors.error(`--- ${err}`));
 				res.status(502).send('Bad Gateway. Data Response Failure.');
 			} else {
 				res.status(200).send(elem);
@@ -24,7 +24,7 @@ app.post('/', (req, res, next) => {
 app.get('/', (req, res, next) => {
 	Item.find({}, (err, docs) => {
 		if (err) {
-			console.log(colors.error(err));
+			console.log(colors.error(`--- ${err}`));
 			res.status(502).send('Bad Gateway. Data Response Failure.');
 		} else {
 			res.status(200).json(docs);

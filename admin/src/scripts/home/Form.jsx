@@ -12,12 +12,14 @@ class Form extends Component {
     };
   }
 
-  componentWillMount(){
+  auth(){
     const token = sessionStorage.getItem('token')
     if(token){
       axios.post(links.server + 'api/verify?token='+token)
       .then(result=>{
-        // document.location = '/'
+        if(result['status']===200){
+          window.location = '/'
+        }
       })
     }
   }
@@ -35,6 +37,7 @@ class Form extends Component {
       .then(result => {
         const token = result.data["token"];
         sessionStorage.setItem("token", token);
+        this.auth()
       })
       .catch(error => console.log(error));
   };

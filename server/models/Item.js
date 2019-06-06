@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const createModel = require('../middlewares/createModel');
 
-let ItemSchema = new mongoose.Schema(
+const data = [
 	{
 		name: { type: String, require: true },
 		price: Number,
@@ -9,7 +10,8 @@ let ItemSchema = new mongoose.Schema(
 	},
 	{
 		collection: 'items'
-	}
-);
+	},
+	"Items"
+];
 
-module.exports = mongoose.model('Items', ItemSchema);
+module.exports = createModel(data)

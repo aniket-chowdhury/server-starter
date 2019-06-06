@@ -37,7 +37,7 @@ app.use(
 );
 app.use(express.json());
 app.use(cors())
-app.use(require(middlewaresDir+'allowedOrigins'))
+// app.use(require(middlewaresDir+'allowedOrigins'))
 
 // CRUD Routes
 app.use('/api', require(middlewaresDir + 'auth'));

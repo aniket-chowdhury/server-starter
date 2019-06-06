@@ -6,6 +6,8 @@ const bcrypt = require('bcrypt');
 
 const login = options => {
 	return (req, res, next) => {
+		console.log(req.body);
+		
 		try {
 			if (
 				(options['mongo'] && options['password']) ||

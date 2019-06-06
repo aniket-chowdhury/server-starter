@@ -39,7 +39,12 @@ app.use(express.json());
 app.use(cors())
 // app.use(require(middlewaresDir+'allowedOrigins'))
 
+
+
 // CRUD Routes
+app.use('/api/verify',require(middlewaresDir+'auth'),(req,res)=>{
+	res.status(200).send('okay')
+})
 app.use('/api', require(middlewaresDir + 'auth'));
 app.use('/api', require(routesDir + 'api'));
 

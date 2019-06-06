@@ -17,7 +17,7 @@ app.post(
 		username: process.env._USERNAME,
 		password: process.env._PASSWORD,
 		key: process.env._USERID,
-		expiry: 60 * 60 * 24,
+		expiry: 60 * 60,
 		mongo: false
 	})
 );

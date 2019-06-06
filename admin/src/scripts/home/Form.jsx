@@ -15,9 +15,9 @@ class Form extends Component {
   componentWillMount(){
     const token = sessionStorage.getItem('token')
     if(token){
-      axios.post(links.server + 'verify?token='+token)
+      axios.post(links.server + 'api/verify?token='+token)
       .then(result=>{
-        
+        // document.location = '/'
       })
     }
   }

@@ -1,22 +1,31 @@
 import React, { Component, Fragment } from 'react'
 import App from './home/App';
-// eslint-disable-next-line
 import SecureApp from './secure/SecureApp';
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import axios from 'axios';
+import links from './Links'
 
 export default class Routes extends Component {
-    componentWillMount(){
+    state = { auth: false }
+    componentWillMount() {
         const token = sessionStorage.getItem('token')
-        console.log(token);
-        
-        this.setState({secure:true})
+        if (token) {
+            axios.post(links.server + 'api/verify?token=' + token)
+                .then(result => {
+                    this.setState({ auth: true })
+                })
+        }
     }
     render() {
         return (
             <Fragment>
                 <Router>
                     <div>
-                        <Route path='/' exact component={App}></Route>
+                        {
+                            this.state.auth ? <Route path='/' exact component={SecureApp}></Route>
+                                :
+                                <Route path='/' exact component={App}></Route>
+                        }
                     </div>
                 </Router>
             </Fragment>

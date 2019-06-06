@@ -1,7 +1,7 @@
 const colors = require(__dirname + '/../../colors');
 
 module.exports = data => {
-	const Item = require(__dirname + '/../../models/' + data['model']);
+	const Item = data['model'];
 	return (req, res, next) => {
 		const id = req.body.itemId || req.query.itemId;
 		if (id) {

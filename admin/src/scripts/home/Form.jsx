@@ -4,23 +4,23 @@ import links from "../Links";
 import axios from "axios";
 
 class Form extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       username: "",
       password: ""
     };
   }
 
-  auth(){
+  auth() {
     const token = sessionStorage.getItem('token')
-    if(token){
-      axios.post(links.server + 'api/verify?token='+token)
-      .then(result=>{
-        if(result['status']===200){
-          window.location = '/'
-        }
-      })
+    if (token) {
+      axios.post(links.server + 'api/verify?token=' + token)
+        .then(result => {
+          if (result['status'] === 200) {
+            window.location = '/'
+          }
+        })
     }
   }
 
@@ -44,7 +44,9 @@ class Form extends Component {
 
   render() {
     return (
+      
       <MDBContainer>
+        {this.props.msg}
         <MDBRow>
           <MDBCol md="6">
             <form onSubmit={this.onSubmit}>

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-
+import Form from './Form';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        Hello World
-      </div>
+<React.Fragment>
+<Form />
+</React.Fragment>
     );
   }
 }

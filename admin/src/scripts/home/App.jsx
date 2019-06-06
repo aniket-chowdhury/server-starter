@@ -3,9 +3,9 @@ import Form from './Form';
 class App extends Component {
   render() {
     return (
-<React.Fragment>
-<Form />
-</React.Fragment>
+      <React.Fragment>
+        <Form />
+      </React.Fragment>
     );
   }
 }

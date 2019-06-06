@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBInput } from "mdbreact";
-import links from "./Links";
+import links from "../Links";
 import axios from "axios";
 
 class Form extends Component {

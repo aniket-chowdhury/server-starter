@@ -22,5 +22,15 @@ app.post(
 	})
 );
 
+app.post(
+	'/mongo',
+	login({
+		username:'email',
+		password:'password',
+		expiry: 60 * 60,
+		mongo: require('../models/Authenticate')
+	})
+);
+
 module.exports = app;
 // export default app;

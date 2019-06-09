@@ -1,6 +1,5 @@
 const app = require('express').Router();
 
-const routesDir = __dirname + '/./api/';
 
 const Item = require('../models/Item');
 

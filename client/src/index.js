@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import "bootstrap-css-only/css/bootstrap.min.css";
 import "mdbreact/dist/css/mdb.css";
 import './styles/index.scss';
-import App from './scripts/App';
+import Routes from './scripts/Routes';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import './styles/index.scss';
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Routes/>, document.getElementById('root'));
